@@ -1,0 +1,1316 @@
+/* 全局基础样式 */
+body {
+  font-family: "Roboto", "Noto Sans SC", sans-serif;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 避免横向滚动条 */
+}
+
+/* 顶部导航栏整体样式 */
+nav {
+  background-color: #ffffff;
+  padding: 20px 40px 0 40px;
+}
+
+/* 顶部内容排列（logo、公司名、右上角按钮） */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo 图片大小 */
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+/* Logo + 公司信息整体布局 */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 公司名称 + 标语整体排列方向 */
+.company-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 公司名称样式 GUO LI INTERNATIONAL CO., LTD. */
+.company-name {
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+}
+
+/* 公司标语样式 Built on Trust. Driven by Service. */
+.slogan {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+  margin-top: 10px;
+}
+
+/* 顶部右侧按钮排列（语言切换、汉堡菜单） */
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 语言切换按钮样式 */
+#langBtn {
+  background-color: #dddddd;
+  color: #000;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#langBtn:hover {
+  background-color: #f1f1f1;
+}
+
+/* 菜单栏样式 */
+.menu {
+  background-color: #2a4351;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 16px 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  color: #f7b500;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+/* 汉堡按钮（移动端显示） */
+.hamburger {
+  font-size: 26px;
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+/* 移动端适配（屏幕小于768px） */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+/* 标语 --------------------------------------------------------------------------------------------------- */
+
+/* Hero 区块整体布局 */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  text-align: center;
+}
+
+/* Hero 内容容器宽度控制 */
+.hero-content {
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* ✅ Hero 横线样式 */
+.hero-line {
+  width: 500px; /* 控制总长度 */
+  height: 4px;
+  margin: 20px auto;
+  border-radius: 2px;
+
+  /* ✅ 渐变背景：中间实心，两边淡出 */
+  background: linear-gradient(
+    to right,
+    transparent,
+    #f7b500 40%,
+    #f7b500 60%,
+    transparent
+  );
+}
+
+/* Hero 主标题样式 Reliable Hauling & Excavation Services in the GTA */
+.hero h1 {
+  font-size: 80px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 黑色阴影 */
+}
+
+/* Hero 副标题样式 Fully licensed, WSIB-covered, and insured for your peace of mind. */
+.hero p {
+  font-size: 33px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* 小标语样式（Your Projects · Our Solutions） */
+.tagline span {
+  font-size: 28px;          /* ✅ 字体较小 */
+  color: #ffffff !important;        /* ✅ 防止 <span class="en"> 被其他样式覆盖 */
+  margin-top: -10px;        /* ✅ 稍微向上靠近副标题 */
+  margin-bottom: 30px;      /* ✅ 与图片之间保持适当距离 */
+  letter-spacing: 1px;      /* ✅ 字符间距稍宽，显得精致 */
+  text-align: center;       /* ✅ 居中显示 */
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {transition-delay: 0.2s;}
+.delay-2 {transition-delay: 0.4s;}
+.delay-3 {transition-delay: 0.6s;}
+.delay-4 {transition-delay: 0.8s;}
+
+/* ✅ Hero 背景图样式 */
+.hero-with-bg {
+  position: relative;
+  background-image: url('Hero-bg.jpg');  /* 改成你上传的图名 */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;         /* 可以根据图片高度调节 */
+}
+
+/* ✅ 黑色半透明蒙版 */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);  /* 半透明黑 */
+  z-index: 1;
+}
+
+/* ✅ 文字内容在蒙版之上 */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+/* 五张图片 --------------------------------------------------------------------------------------------------- */
+
+/* 图片滑动容器 */
+.image-scroll {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 20px;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.image-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 单张图片卡片样式 */
+.image-box {
+  width: 300px;
+  height: 400px;
+  background-size: cover;         /* ✅ 自动裁剪填满容器 */
+  background-position: center;    /* ✅ 居中显示图片主体 */
+  background-repeat: no-repeat;
+  border-radius: 0px;             /* ✅ 直角边 */
+  box-shadow: none;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+/* 上下错落效果 */
+.image-box.up {
+  margin-top: 0;
+}
+
+.image-box.down {
+  margin-top: 40px;
+}
+
+/* Who We Are --------------------------------------------------------------------------------------------------- */
+
+/* Who We Are 区块外层链接样式 */
+.who-we-are-link {
+  text-decoration: none;      /* 取消默认下划线 */
+  color: inherit;             /* 保持文字颜色 */
+  display: block;             /* 块级展示，包裹整块区域 */
+}
+
+/* 主区块样式：左右布局 + 间距 + 响应式 */
+.who-we-are {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 1px auto 60px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* ✅ hover 动画 */
+}
+
+/* Hover 整块浮起阴影 */
+.who-we-are:hover {
+  transform: translateY(-4px);
+  box-shadow: none; /* 明确不加阴影 */
+}
+
+/* 左边文字部分 */
+.who-we-are .text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* 标题样式 */
+.who-we-are h2 {
+  font-size: 48px;
+  color: #f7b500;
+  margin-bottom: 10px;
+}
+
+/* 正文段落样式 */
+.who-we-are p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px; /* 或 margin-top: 40px; 看你偏好 */
+}
+
+.who-title {
+  align-self: flex-start;
+}
+
+.who-paragraph {
+  margin-top: 20px;
+  margin-bottom: auto;
+}
+
+/* 右边图片部分 */
+.who-we-are .image-side {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+/* 图片样式 */
+.who-we-are .image-side img {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 50px; /* ⬅️ 增加这个 */
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .who-we-are .image-side {
+    margin-top: 50px;
+  }
+}
+
+/* ✅ Who We Are 外层背景填满宽度 */
+.who-we-are-bg {
+  background-image: url('WhoWeAre-bg.jpg'); /* ⬅️ 改成你自己的图片路径 */
+  background-size: cover;       /* 背景图填满整个区域 */
+  background-position: center;  /* 居中显示 */
+  background-repeat: no-repeat; /* 不重复 */
+  width: 100%;
+  padding: 5px 0;
+  margin-top: 40px; /* 👈 添加这一行，把整体往下移动一点 */
+}
+
+
+/* How We Help --------------------------------------------------------------------------------------------------- */
+
+/* How We Help 链接包装（点击整块区域跳转） */
+.how-we-help-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* How We Help 主区块 */
+.how-we-help {
+  padding: 40px 20px 10px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 标题样式 */
+.how-we-help h2 {
+  font-size: 48px;
+  color: #f7b500;
+  margin-bottom: 5;
+}
+
+/* Hover 整块浮起阴影 */
+.how-we-help:hover {
+  transform: translateY(-4px);
+  box-shadow: none; /* 不加阴影 */
+}
+
+/* From excavation to delivery — we keep your project moving. 标语 */
+.help-tagline {
+  font-size: 18px;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.how-we-help-wrapper {
+  background: linear-gradient(to bottom right, #fdfaf3, #ffffff); /* 浅黄渐变 */
+  border-radius: 12px;
+}
+
+/* Service Card 服务区卡片整体网格布局 */
+/* 全局基础样式 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 顶部导航栏整体样式 */
+nav {
+  background-color: #ffffff;
+  padding: 20px 40px 0 40px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+}
+
+.slogan {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+  margin-top: 10px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#langBtn {
+  background-color: #dddddd;
+  color: #000;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#langBtn:hover {
+  background-color: #f1f1f1;
+}
+
+.menu {
+  background-color: #2a4351;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 16px 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  color: #f7b500;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.hamburger {
+  font-size: 26px;
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+/* 服务区卡片容器布局 */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* 卡片外层链接 */
+.service-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+/* 每张服务卡片 */
+.service-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  overflow: hidden;
+  background-color: #f9f9f4;
+  min-height: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover 放大阴影效果 */
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 卡片图片 */
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* 卡片文字容器 */
+.service-card .service-text {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+/* 标题 */
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* 段落 */
+.service-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 响应式支持 */
+@media (max-width: 991px) {
+  .service-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: 100%;
+  }
+}
+
+/* Review --------------------------------------------------------------------------------------------------- */
+
+/* 滚动评论区域容器 */
+.review-scroll-container {
+  overflow: hidden;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* 滚动轨道：水平滚动、连续动画 */
+.review-scroll-track {
+  display: flex;
+  gap: 24px;
+  animation: scrollReviews 60s linear infinite;
+}
+
+/* 评论卡片样式 */
+.review-card {
+  flex: 0 0 320px;                     /* 卡片宽度固定 */
+  background-color: #f8f8f8;          /* 背景调浅 */
+  border: 1px solid #ccc;             /* 灰色边框 */
+  padding: 14px 16px;                 /* 缩小留白 */
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 13px;                    /* 整体字小 */
+  line-height: 1.4;                   /* 行距紧凑 */
+  color: #333;
+  min-height: 100px;                  /* ✅ 控制高度变矮 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 星级评分样式 */
+.review-card .stars {
+  color: gold;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* 评论文字段落 */
+.review-card p {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+/* 评论人名 */
+.review-card .author {
+  font-weight: bold;
+  margin-top: 4px;
+  color: #000;
+}
+
+/* 中文或英文独立控制（可选） */
+.review-card .zh {
+  font-size: 12px;
+}
+.review-card .en {
+  font-size: 13px;
+}
+
+/* 滚动动画效果 */
+@keyframes scrollReviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Contact --------------------------------------------------------------------------------------------------- */
+
+/* Contact 按钮 hover 放大效果 */
+.contact-btn {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Retrun to top --------------------------------------------------------------------------------------------------- */
+
+/* 返回顶部按钮样式 */
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #c0bcb3;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #e0a100;
+}
+
+.clickable-title {
+  font-size: 36px;
+  color: #f7b500;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clickable-title:hover {
+  color: #d48806;
+  text-decoration: underline;
+}
+
+/* 小屏设备优化（宽度小于480px） */
+@media (max-width: 480px) {
+  /* Hero 主标题缩小 */
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  /* Hero 副标题缩小 */
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* 小标语更紧凑 */
+  .tagline span {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Who We Are 区块上下堆叠 */
+  .who-we-are {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .who-we-are .image-side {
+    margin-top: 20px;
+  }
+
+  /* 调整 service-card 宽度 */
+  .service-card {
+    width: 100%;
+  }
+
+  /* 联系方式区块文字缩小 */
+  .contact-section p {
+    font-size: 16px;
+  }
+
+  /* 联系按钮缩小一点 */
+  .contact-btn button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Review 卡片字体调整 */
+  .review-card {
+    font-size: 12px;
+  }
+
+  .review-card .stars {
+    font-size: 14px;
+  }
+
+  /* 返回顶部按钮缩小 */
+  #backToTopBtn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+ /* ABOUT 页面 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+ /* 标题+图片 内容 ----------------------------------------*/
+
+ .about-section-dark {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background-image: url('waste.jpg'); /* 你的图片路径 */
+  background-size: cover;
+  background-position: center 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.about-text-box {
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: -50%;
+  margin-top: -80px;
+}
+
+/* 添加渐变竖线 */
+.about-text-box::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 6px;
+  height: calc(100% - 30px); /* 可选：减少高度以配合下移 */
+  background: linear-gradient(to bottom, #f4a300, rgba(244, 163, 0, 0));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.about-text {
+  color: white;
+}
+
+.about-text h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.guoli-line {
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+.hauling-line {
+  font-size: 40px;
+  color: #f4a300;
+  line-height: 1.2;
+}
+
+.about-text p {
+  font-size: 25px;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.about-text span.zh {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .about-section-dark {
+    height: 400px;
+    background-position: center top;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-text h3 {
+    font-size: 24px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+}
+
+/* 动画 keyframes 定义 */
+/* 动画关键帧：向上淡入 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 通用动画样式 */
+.about-title-line1,
+.about-title-line2,
+.about-title-line3,
+.about-title-line4 {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* 延迟设定 */
+.about-title-line1 {animation-delay: 0.2s;}
+.about-title-line2 {animation-delay: 0.4s;}
+.about-title-line3 {animation-delay: 0.6s;}
+.about-title-line4 {animation-delay: 0.8s;}
+
+/* 主要介绍内容 --------------------*/
+
+/* 整体内容区域最大宽度居中 */
+.who-we-are-text {
+  max-width: 900px;        /* 控制最大宽度 */
+  margin: 40px auto 50px;  /* 上下留白，水平居中 */
+  padding: 0 20px;         /* 左右安全边距（移动端） */
+}
+
+/* 标题居中 + 字体大 */
+.who-we-are-text h2 {
+  text-align: center;
+  font-size: 48px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* 黄色下划线分割线 */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background-color: #f7b500; /* 黄色 */
+  margin: 12px auto 24px auto; /* 上下间距 + 居中 */
+  border-radius: 2px;
+}
+
+/* 正文段落文字样式 */
+.who-we-are-text p span.en,
+.who-we-are-text p span.zh {
+  color: #292929;
+  font-size: 18px;
+  line-height: 1.8;
+  display: inline-block;
+}
+
+/* 最后一句加粗的段落额外处理 */
+.who-we-are-text p:last-child {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* What we do 介绍内容 -----------------------------------*/
+
+.what-we-do-section {
+  background-color: #f5f5f5; /* 浅灰色背景 */
+  padding: 0px 0;
+}
+
+.what-we-do-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  align-items: flex-start;
+}
+
+.what-we-do-image {
+  flex: 2;
+  min-width: 300px;
+  background-image: url('what we do.jpg'); /* 替换为实际图片路径 */
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+  margin-top: 30px; /* 向下移动 30px，你可以自己调整数值 */
+}
+
+.what-we-do-text {
+  flex: 1;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+.what-we-do-text h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #f4a300;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #3f3f3f;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.zh {
+  display: none;
+}
+
+/* 起始状态 */
+.animate-service {
+  opacity: 0;
+  transform: translate(50px, -50px) rotate(4deg);
+  transition: all 0.8s ease-out;
+}
+
+/* 完成状态 */
+.animate-service.visible {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
+}
+
+/* 延迟效果：可加多几项 */
+.animate-service.delay-1 { transition-delay: 0.1s; }
+.animate-service.delay-2 { transition-delay: 0.2s; }
+.animate-service.delay-3 { transition-delay: 0.3s; }
+.animate-service.delay-4 { transition-delay: 0.4s; }
+.animate-service.delay-5 { transition-delay: 0.5s; }
+.animate-service.delay-6 { transition-delay: 0.6s; }
+
+/* Services 页面 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* ✅ Services 页面：背景区样式 */
+/* ✅ 整个服务顶部区块 */
+.services-section-dark {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background-image: url('services1.jpg'); /* 👈 替换为你的服务页面背景图路径 */
+  background-size: cover;
+  background-position: center 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色遮罩 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.services-text-box {
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: -41.5%;
+  margin-top: -80px;
+}
+
+/* ✅ 添加渐变黄色竖线（与 About 一致） */
+.services-text-box::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 6px;
+  height: calc(100% - 30px);
+  background: linear-gradient(to bottom, #f4a300, rgba(244, 163, 0, 0));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* ✅ 文字通用样式 */
+.services-text {
+  color: white;
+}
+
+.services-text h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.services-title-line2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.services-title-line4 {
+  font-size: 25px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* ✅ 动画：逐行淡入 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 1s forwards;
+}
+
+.delay-1 {animation-delay: 0.2s;}
+.delay-2 {animation-delay: 0.4s;}
+.delay-3 {animation-delay: 0.6s;}
+
+/* ✅ 响应式支持 */
+@media (max-width: 768px) {
+  .services-text-box {
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .services-text-box::before {
+    display: none;
+  }
+
+  .services-text h2 {
+    font-size: 48px;
+  }
+
+  .services-title-line2 {
+    font-size: 28px;
+  }
+
+  .services-title-line4 {
+    font-size: 16px;
+  }
+}
+
+/* ✅ 服务详细区块整体布局 */
+/* 图片统一样式 */
+.image-block img {
+  width: 100%;
+  max-width: 500px;  /* 控制最大宽度 */
+  height: auto;      /* 高度自适应 */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* 控制图片容器大小（可选） */
+.image-block {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 6个服务内容------------------------- */
+.services-section {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 15%;
+}
+
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-text {
+  max-width: 600px;     /* 限制文字最大宽度 */
+  margin: 0 auto;       /* 水平居中 */
+  padding: 20px;
+  flex: 1;
+  position: relative;
+}
+
+.service-underline {
+  width: 100%;
+  max-width: 800px; /* 横线最大宽度（根据内容适配） */
+  height: 8px; /* 粗一点的线条 */
+  margin-top: 50px; /* ✅ 用 margin 而不是 position */
+  background: linear-gradient(
+    to left,
+    rgba(100, 100, 100, 0.4) 0%,
+    rgba(100, 100, 100, 0.25) 50%,
+    rgba(100, 100, 100, 0) 100%
+  );
+}
+
+.service-underline.right {
+  background: linear-gradient(
+    to right,
+    rgba(100, 100, 100, 0.4) 0%,
+    rgba(100, 100, 100, 0.25) 50%,
+    rgba(100, 100, 100, 0) 100%
+  );
+}
+
+.service-text h3 {
+  font-size: 35px;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.service-text h4 {
+  font-size: 20px;
+  color: #f4a300;
+  margin-bottom: 10px;
+}
+
+.service-text p {
+  font-size: 18px;
+  color: #414040;
+  line-height: 1.6;
+}
+
+.service-text .zh {
+  display: block;
+  color: #1d3557;
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.service-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.service-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* 保证中英文样式一致 */
+.service-text h3 span.zh,
+.service-text h4 span.zh,
+.service-text p span.zh {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  display: inline;
+}
